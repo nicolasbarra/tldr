@@ -58,9 +58,9 @@ The input for aggregation consists of the location of the output from quality co
 The code for aggregation is located in src/aggregation.py and works as follows: data from the quality control as well as an article ID and a scale value are taken as input. The scale value is indicative of how summarized the requester wants the output to be, with 0 being the least summarized (including the most sentences) and 100 being the most summarized (including the least sentences). We use the article ID to find the sentences from the quality control that are from the desired article. For each sentence, if it has a greater agreement value than the scale value, it is included in the paragraph outputted in the order it appears in the original article.
 
 ### Where to find:
-- Raw data
-    - Found in /data
-- Sample input/output for QC
+- Raw data (txt and pdf of articles)
+    - Found in /data/raw_data_input
+- Sample input/output for QC (old and new formats)
     - Found in src/qc/data
 - Sample input/output for aggregation
     - Found in src/ag/data
