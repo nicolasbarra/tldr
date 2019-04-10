@@ -30,7 +30,9 @@ For each batch of HITs we upload, we will receive an output CSV.  Each row in th
 3. HIT_ID
 4. Worker_ID
 5. For each sentence in the section:
+  
   a. Sentence_i_input: Sentence text
+  
   b. Sentence_i_output: Yes or No (important or not important)
 
 Note that we don’t need to keep track of the global position of the sentence in the article, because we had to create a dictionary of (sentence text → sentence position) when parsing the article into sentences, so we can just access this dictionary when sorting sentences for the final summary we are outputting.  
@@ -59,12 +61,17 @@ The code for aggregation is located in src/aggregation.py and works as follows: 
 
 ### Where to find:
 1. Raw data
+  
   a. Found in /data
 2. Sample input/output for QC
+  
   a. Found in src/qc/data
 3. Sample input/output for aggregation
+  
   a. Found in src/ag/data
 4. Code for QC
+  
   a. Found in src/qc
 5. Code for aggregation
+  
   a. Found in src/ag
