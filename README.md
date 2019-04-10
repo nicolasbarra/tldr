@@ -25,28 +25,26 @@ We are starting with 5 New Yorker articles.  We are then pasting the text of eac
 We now have sections of text which contain about 15 sentences, but might have more or less.  For every unique section length, we will create a new CSV file where each row corresponds to 1 section, and column i  in that row will contain the ith sentence in that section.  (For example, if we end up with sections of length 12,13,14,15,16, and 17, we will make 6 different CSV files). We will also include in each row the name of the article which that section came from, and article ID which we assign to each article at the beginning.  Because we are making a unique CSV for every section length, within each CSV, every row will have the same number of columns. We will then upload these CSVs to Mechanical Turk where each CSV is a batch of HITs, and each row of a CSV will correspond to 1 HIT. 
 For each batch of HITs we upload, we will receive an output CSV.  Each row in the CSV will correspond to 1 HIT, and each piece of information from the HIT will be in a different column.  Our column headers will be:
 
-1. Article_ID
-2. Article_Name
-3. HIT_ID
-4. Worker_ID
-5. For each sentence in the section:
-  
-  a. Sentence_i_input: Sentence text
-  
-  b. Sentence_i_output: Yes or No (important or not important)
+- Article_ID
+- Article_Name
+- HIT_ID
+- Worker_ID
+- For each sentence in the section: 
+    - Sentence_i_input: Sentence text
+    - Sentence_i_output: Yes or No (important or not important)
 
 Note that we don’t need to keep track of the global position of the sentence in the article, because we had to create a dictionary of (sentence text → sentence position) when parsing the article into sentences, so we can just access this dictionary when sorting sentences for the final summary we are outputting.  
 
 ### Input/Output CSV Format For Quality Control
 The input for quality control is each output CSV from Mechanical Turk.  The output CSV will have the following format, where each row corresponds to 1 sentence.
 Header categories:
-  1. Article_ID: ID of article where sentence originated.
-  2. Article_Name: Name of article where sentence originated
-  3. Sentence_Order_Number: Initial position of sentence within article. 
-  4. Sentence: Sentence Text
-  5. Number_of_Votes: Number of Turkers who marked this sentence as important
-  6. Max_Article_Votes: The greatest number of votes received by any sentence in that article.
-  7. Agreement: Number_of_Votes / Max_Article_Votes
+  - Article_ID: ID of article where sentence originated.
+  - Article_Name: Name of article where sentence originated
+  - Sentence_Order_Number: Initial position of sentence within article. 
+  - Sentence: Sentence Text
+  - Number_of_Votes: Number of Turkers who marked this sentence as important
+  - Max_Article_Votes: The greatest number of votes received by any sentence in that article.
+  - Agreement: Number_of_Votes / Max_Article_Votes
 
 ### Which Parts of Code Deal with Quality Control Module
 The code for quality control is located in src/qualitycontrol.py and works as follows: convert the input CSV to a Pandas Dataframe.  For each sentence from each article, we will get the rows of the Dataframe which contain that sentence.  There will be 10 of these rows.  We will then sum the sentence_i_output cell for each row as the value will be 1 if the worker in that HIT marked the sentence as important, and 0 if the worker in that HIT did not mark the sentence as important and store this sum as a variable Votes.  We will then create a tuple of the sentence, Votes, Article_Name, Article_ID, and Sentence_Order_Number.  For each article ID, we store a max value which corresponds to the greatest number of votes received by any sentence in that article.  If votes is greater than the current max, we replace votes with max. After we create a tuple for each sentence, we iterate through each tuple and add Max_Article_Votes and Agreement.  
@@ -60,18 +58,13 @@ The input for aggregation consists of the location of the output from quality co
 The code for aggregation is located in src/aggregation.py and works as follows: data from the quality control as well as an article ID and a scale value are taken as input. The scale value is indicative of how summarized the requester wants the output to be, with 0 being the least summarized (including the most sentences) and 100 being the most summarized (including the least sentences). We use the article ID to find the sentences from the quality control that are from the desired article. For each sentence, if it has a greater agreement value than the scale value, it is included in the paragraph outputted in the order it appears in the original article.
 
 ### Where to find:
-1. Raw data
-  
-  a. Found in /data
-2. Sample input/output for QC
-  
-  a. Found in src/qc/data
-3. Sample input/output for aggregation
-  
-  a. Found in src/ag/data
-4. Code for QC
-  
-  a. Found in src/qc
-5. Code for aggregation
-  
-  a. Found in src/ag
+- Raw data
+    - Found in /data
+- Sample input/output for QC
+    - Found in src/qc/data
+- Sample input/output for aggregation
+    - Found in src/ag/data
+- Code for QC
+    - Found in src/qc
+- Code for aggregation
+    - Found in src/ag
