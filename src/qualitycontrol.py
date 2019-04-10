@@ -24,9 +24,9 @@ maxVotes = Counter()
 
 for index, row in results_df.iterrows():
   #for col in columns: 
-    is_relevant = row['Is_Relevant']
-    sentence = (row['ArticleID'], row['Sentence'])
-    article = row['ArticleID']
+    is_relevant = row['is_relevant']
+    sentence = (row['article_id'], row['sentence_order'], row['sentence'])
+    article = row['article_id']
     #sentence = row[col]
     if is_relevant == 1:
       counts[sentence] += 1
@@ -45,7 +45,8 @@ for index, row in final_df.iterrows():
   dict_list.append ( 
     {
     'article_id': row.name[0],
-    'sentence': row.name[1],
+    'sentence_order': row.name[1],
+    'sentence': row.name[2],
     'votes': row[0],
     'max_votes': maxVotes[row.name[0]],     
     'agreement': row[0] / maxVotes[row.name[0]] * 100      
