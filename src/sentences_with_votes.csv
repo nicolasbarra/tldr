@@ -1,4 +1,4 @@
-ArticleID,Article Name,Sentence Order #,Sentence,HITID,WorkerID,Is_Relevant
+article_id,article_name,sentence_order,sentence,hit_id,worker_id,is_relevant
 Article1,"Netanyahu, Gantz, and Five Scenarios for the Israeli Election",0,"Netanyahu, Gantz, and Five Scenarios for the Israeli Election Bernard Avishai If the final polls on the Israeli election are to be believed—by law, there will be no more revealed before the voting begins, on Tuesday morning—things are looking better for Prime Minister Benjamin Netanyahu’s Likud Party than for Blue and White, the new centrist party led by the former military Chief of Staff Benny Gantz.",HIT1,Worker1,1
 Article1,"Netanyahu, Gantz, and Five Scenarios for the Israeli Election",1,"The two continue to run neck and neck in the race for a plurality in the Knesset—with about thirty seats each, out of a total of a hundred and twenty.",HIT2,Worker2,0
 Article1,"Netanyahu, Gantz, and Five Scenarios for the Israeli Election",2,"But both are running with a bloc of smaller parties, and Netanyahu’s bloc seems more likely than Gantz’s to win a sixty-one-seat Knesset majority.",HIT3,Worker3,0
