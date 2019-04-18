@@ -68,3 +68,5 @@ The code for aggregation is located in src/aggregation.py and works as follows: 
     - Found in src/qc
 - Code for aggregation
     - Found in src/ag
+- Code for data processing
+    - Found in src/dp
