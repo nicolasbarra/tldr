@@ -79,13 +79,30 @@ We plan to analyze our methods and results using a few different strategies.  Fi
 We also plan to analyze how often people tend to agree with each other about which sentences are important using majority vote. For each sentence, if the majority left the checkbox with the number corresponding to the sentence unchecked, then we find the percentage of people who left this sentence unchecked. Similarly, if the majority checked the checkbox with the number corresponding to the sentence, then we find the percentage of people who checked this sentence. Essentially, we are finding the amount of people who agree with the majority when it voted each sentence as important or unimportant.
 
 
-## Instructions:
+## Guide and Instructional Video Transcript:
+
+# Guide
 Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article. 
 
-We recommend selecting **3-5 sentences**, but feel free to select more or fewer if your passage seems especially relevant or especially insignificant.  Just remember that the goal of our project is to provide a concise summary, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a binary fashion whether or not each sentence is important.  If you have questions or something is not working, please send an email to anixon@seas.upenn.edu, nbarra@seas.upenn.edu, ameliakr@seas.upenn.edu, or epow@seas.upenn.edu.  
+We recommend selecting **3-5 sentences**, but feel free to select more or fewer if your passage seems especially relevant or especially insignificant.  Just remember that the goal of our project is to provide a concise summary, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a binary fashion whether or not each sentence is important.  If you have questions or if something is not working, please send an email to anixon@seas.upenn.edu.  
 
 Follow [this link](https://workersandbox.mturk.com/?filters%5Bsearch_term%5D=trdl_1&page_size=20&page_number=1&sort=num_hits_desc&filters%5Bmin_reward%5D=0) to our task on Amazon Mechanical Turk Sandbox
 1. Accept the HIT
 2. Read the provided passage.
 3. Each sentence will be numbered.  Select the most important sentences by clicking the number which corresponds to the number adjacent to each sentence you consider important.  Numbers are printed after the sentence to which they refer. 
 4. Fill out the feedback box which asks for qualitative feedback about your experience completing our HIT.  We are interested in feedback about the clarity of our instructions, ease of selecting sentences, appropriate compensation for the Turkers based on time and effort, or anything else which might help us gather better data.  
+
+# Instructional Video Transcript
+Below is the transcript of the intructional video that explains how to use the system, including all details about how to access it, and what contributors should do in order to make contributions to the project:
+
+Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article, and then give us feedback based on your experience.  
+
+On Mechanical Turk Sandbox, search for tldr_1. If you cannot find the hit, it may have already been completed and you can search for tldr_2, 3, ... , 12. Once you have accepted the HIT, read the provided block of text.  Then, select the most important sentences in the section by checking the box with numbers which corresponds to sentences you consider important.  The number for each sentence is printed after the sentence.
+
+Try to select sentences which address the central themes and arguments of the article, rather than sentences which contain minute details, specific examples, or tangential information. Note that you are not ranking the relative importance of sentences; rather you are simply indicating in a binary fashion whether or not each sentence is important.  
+
+We recommend selecting 3-5 sentences, but feel free to select more or fewer if your passage seems especially relevant or especially insignificant.  Just remember that the goal of our project is to provide a concise summary, so choosing more sentences will not necessarily help us create the best product.
+
+Fill out the feedback box which asks for qualitative feedback about your experience completing our HIT.  We are interested in feedback about the clarity of our instructions, ease of selecting sentences, appropriate Turker compensation based on time and effort, or anything else which might help us gather better data.  
+
+Your inputs will help us determine how effective this summarization strategy is.  We plan to compare the summaries you help us to create with the summaries created by online automatic summarizers, and hopefully tweak our method of data collection to improve the quality of our results.  
