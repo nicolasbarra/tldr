@@ -11,10 +11,6 @@ import numpy as np
 import pandas as pd
 import textwrap
 
-df = pd.read_csv('How_Trump_Betrayed_the_General_Who_Defeated_ISIS.csv')
-sentence_dict = dict(zip(list(df[df.columns[2]]), list(df[df.columns[1]])))
-print(sentence_dict)
-
 def summarize(article_id, scale, data_path, dict_path) : #article id as string, scale as number from 0 - 100 and data_path as string
   results_df = pd.read_csv(data_path)
   df = pd.read_csv(dict_path)
@@ -38,8 +34,8 @@ def summarize(article_id, scale, data_path, dict_path) : #article id as string, 
 
   return textwrap.fill(unbound_string)
 
-result = (summarize("trdl", 90, "output.csv", 'How_Trump_Betrayed_the_General_Who_Defeated_ISIS.csv'))
-text_file = open("summary.txt", "w")
-text_file.write(result)
-text_file.close()
-print(result)
+#result = (summarize("trdl", 90, "data/test_output.csv", 'data/dict.csv'))
+#text_file = open("summary.txt", "w")
+#text_file.write(result)
+#text_file.close()
+#print(result)
