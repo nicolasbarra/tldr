@@ -88,8 +88,8 @@ Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, ver
 
 We recommend selecting **3-5 sentences**, but feel free to select **more** or **fewer** if your passage seems especially relevant or especially insignificant. Just remember that the goal of our project is to provide a **concise summary**, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a **binary fashion** whether or not each sentence is important.  If you have questions or if something is not working, please send an email to anixon@seas.upenn.edu.  
 
-In order to find our our task on Amazon Mechanical Turk Sandbox you can use the following links (note that some HITs may be completed, in which case, it is necessary to click the link to another HIT in order to make a contribution):
-
+In order to find our our task on Amazon Mechanical Turk Sandbox you can use this link (Note that some HITs may be completed, in which case, it is necessary to select another HIT in order to make a contribution. Additionally, note that all HITs have Elizabeth as the name of the requester for reference.).
+https://workersandbox.mturk.com/requesters/AAHT5IXE5NHA0/projects?ref=w_pl_prvw
 
 Once you have found a HIT that is yet to be completed, follow the following process:
 1. Accept the HIT
