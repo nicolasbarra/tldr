@@ -83,6 +83,7 @@ We plan to analyze our methods and results using a few different strategies. Fir
 We also plan to analyze how often people tend to agree with each other about which sentences are important using majority vote. For each sentence, if the majority left the checkbox with the number corresponding to the sentence unchecked, then we find the percentage of people who left this sentence unchecked. Similarly, if the majority checked the checkbox with the number corresponding to the sentence, then we find the percentage of people who checked this sentence. Essentially, we are finding the amount of people who agree with the majority when it voted each sentence as important or unimportant.
 
 **For the GUI, in order to run it locally, it is necessary to install NumPy, pandas, and PySimpleGUI.**
+The GUI is the code that can be used to run the system.
 
 
 ## Guide and Instructional Video Transcript:
