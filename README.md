@@ -84,11 +84,14 @@ For the GUI, in order to run it locally, it is necessary to install NumPy, panda
 ## Guide and Instructional Video Transcript:
 
 # Guide
-Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article. 
+Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts. You will help us by selecting the most important sentences from a short block of text. We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article. 
 
-We recommend selecting **3-5 sentences**, but feel free to select more or fewer if your passage seems especially relevant or especially insignificant.  Just remember that the goal of our project is to provide a concise summary, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a binary fashion whether or not each sentence is important.  If you have questions or if something is not working, please send an email to anixon@seas.upenn.edu.  
+We recommend selecting **3-5 sentences**, but feel free to select **more** or **fewer** if your passage seems especially relevant or especially insignificant. Just remember that the goal of our project is to provide a **concise summary**, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a **binary fashion** whether or not each sentence is important.  If you have questions or if something is not working, please send an email to anixon@seas.upenn.edu.  
 
-Follow [this link](https://workersandbox.mturk.com/?filters%5Bsearch_term%5D=trdl_1&page_size=20&page_number=1&sort=num_hits_desc&filters%5Bmin_reward%5D=0) to our task on Amazon Mechanical Turk Sandbox
+In order to find our our task on Amazon Mechanical Turk Sandbox you can use the following links (note that some HITs may be completed, in which case, it is necessary to click the link to another HIT in order to make a contribution):
+
+
+Once you have found a HIT that is yet to be completed, follow the following process:
 1. Accept the HIT
 2. Read the provided passage.
 3. Each sentence will be numbered.  Select the most important sentences by clicking the number which corresponds to the number adjacent to each sentence you consider important.  Numbers are printed after the sentence to which they refer. 
