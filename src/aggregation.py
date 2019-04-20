@@ -11,13 +11,19 @@ import numpy as np
 import pandas as pd
 import textwrap
 
-def summarize(article_id, scale, data_path) : #article id as string, scale as number from 0 - 100 and data_path as string
+df = pd.read_csv('How_Trump_Betrayed_the_General_Who_Defeated_ISIS.csv')
+sentence_dict = dict(zip(list(df[df.columns[2]]), list(df[df.columns[1]])))
+print(sentence_dict)
+
+def summarize(article_id, scale, data_path, dict_path) : #article id as string, scale as number from 0 - 100 and data_path as string
   results_df = pd.read_csv(data_path)
-  
+  df = pd.read_csv(dict_path)
+  sentence_dict = dict(zip(list(df[df.columns[2]]), list(df[df.columns[1]])))
   tuple_list = []
 
   for index, row in results_df.iterrows():
-    tuple_list.append((row['article_id'], row['sentence_order'], row['sentence'],
+    sentence = sentence_dict[int(row['sentence_order'])]
+    tuple_list.append((row['article_id'], row['sentence_order'], sentence,
                      row['agreement']))
   
   article_list = [(entry[1], entry[2], entry[3]) for entry in tuple_list if entry[0] == article_id]
@@ -32,7 +38,7 @@ def summarize(article_id, scale, data_path) : #article id as string, scale as nu
 
   return textwrap.fill(unbound_string)
 
-result = (summarize("Article1", 90, "output.csv"))
+result = (summarize("trdl", 90, "output.csv", 'How_Trump_Betrayed_the_General_Who_Defeated_ISIS.csv'))
 text_file = open("summary.txt", "w")
 text_file.write(result)
 text_file.close()
