@@ -97,7 +97,7 @@ Below is the transcript of the intructional video that explains how to use the s
 
 Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article, and then give us feedback based on your experience.  
 
-On Mechanical Turk Sandbox, search for tldr_1. If you cannot find the hit, it may have already been completed and you can search for tldr_2, 3, ... , 12. Once you have accepted the HIT, read the provided block of text.  Then, select the most important sentences in the section by checking the box with numbers which corresponds to sentences you consider important.  The number for each sentence is printed after the sentence.
+On Mechanical Turk Sandbox, search for tldr_1. If you cannot find the hit, it may have already been completed and you can search for tldr_2, 3, ... , 13. Once you have accepted the HIT, read the provided block of text.  Then, select the most important sentences in the section by checking the box with numbers which corresponds to sentences you consider important.  The number for each sentence is printed after the sentence.
 
 Try to select sentences which address the central themes and arguments of the article, rather than sentences which contain minute details, specific examples, or tangential information. Note that you are not ranking the relative importance of sentences; rather you are simply indicating in a binary fashion whether or not each sentence is important.  
 
