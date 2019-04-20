@@ -83,7 +83,7 @@ For the GUI, in order to run it locally, it is necessary to install NumPy, panda
 
 ## Guide and Instructional Video Transcript:
 
-# Guide
+### Guide
 Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts. You will help us by selecting the most important sentences from a short block of text. We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article. 
 
 We recommend selecting **3-5 sentences**, but feel free to select **more** or **fewer** if your passage seems especially relevant or especially insignificant. Just remember that the goal of our project is to provide a **concise summary**, so choosing more sentences will not necessarily help us create the best product. Note that you are **not** ranking the relative importance of sentences, simply indicating in a **binary fashion** whether or not each sentence is important.  If you have questions or if something is not working, please send an email to anixon@seas.upenn.edu.  
@@ -97,7 +97,7 @@ Once you have found a HIT that is yet to be completed, follow the following proc
 3. Each sentence will be numbered.  Select the most important sentences by clicking the number which corresponds to the number adjacent to each sentence you consider important.  Numbers are printed after the sentence to which they refer. 
 4. Fill out the feedback box which asks for qualitative feedback about your experience completing our HIT.  We are interested in feedback about the clarity of our instructions, ease of selecting sentences, appropriate compensation for the Turkers based on time and effort, or anything else which might help us gather better data.  
 
-# Instructional Video Transcript
+### Instructional Video Transcript
 Below is the transcript of the intructional video that explains how to use the system, including all details about how to access it, and what contributors should do in order to make contributions to the project:
 
 Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article, and then give us feedback based on your experience.  
