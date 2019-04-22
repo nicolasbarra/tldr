@@ -103,7 +103,7 @@ Once you have found a HIT that is yet to be completed, follow the following proc
 4. Fill out the feedback box which asks for qualitative feedback about your experience completing our HIT.  We are interested in feedback about the clarity of our instructions, ease of selecting sentences, appropriate compensation for the Turkers based on time and effort, or anything else which might help us gather better data.  
 
 ### Instructional Video Transcript
-Below is the transcript of the intructional video that explains how to use the system, including all details about how to access it, and what contributors should do in order to make contributions to the project:
+Below is the transcript of the instructional video that explains how to use the system, including all details about how to access it, and what contributors should do in order to make contributions to the project:
 
 Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts.  You will help us by selecting the most important sentences from a short block of text.  We have created HITs on Mechanical Turk Sandbox where you select the most important sentences from a portion of a lengthy article, and then give us feedback based on your experience.  
 
