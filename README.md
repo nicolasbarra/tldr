@@ -72,7 +72,7 @@ The code for aggregation is located in src/aggregation.py and works as follows: 
     - Found in src/dp
 - Code for GUI 
     - Found in src
-- Code for Data Analysis
+- Code for data analysis
     - Found in src
 - ipynb versions of QC and AG
     - Found in src/ipynb
