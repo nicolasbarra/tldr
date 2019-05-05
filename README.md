@@ -72,12 +72,14 @@ The code for aggregation is located in src/aggregation.py and works as follows: 
     - Found in src/dp
 - Code for GUI 
     - Found in src
+- Code for data analysis
+    - Found in src
 - ipynb versions of QC and AG
     - Found in src/ipynb
 - Data from classmate HITs
     - /data/raw_data_input/initial_hit_results
 - Data from Turkers voting on summaries 
-    - /data/raw_data_input/initial_hit_results    
+    - /data/raw_data_input/initial_hit_results
 
 ## Code and Analysis:
 We first divided each article into sections of roughly 20 sentences.  We had to do this manually to ensure that each section made sense as a standalone block of text.  We then used the Python Natural Language Toolkit (NLTK) library to split each section into individual sentences, and appended a circled number, for example ①, to the end of each sentence. We do this in the data processing code, which can be found in the dp folder in the the src folder in the repository. We pass these numbered sentences into Mechanical Turk Sandbox to create each HIT, where workers select buttons corresponding to the sentence numbers.  Our output CSV tells us which sentences a Turker voted for in each HIT, and using our quality control and aggregation methods described above, we construct a summary for each article.  Using pyforms, we have created an interactive GUI where a user can adjust a slider and we will present summaries of different lengths.  As they they ask for shorter and shorter summaries, we will raise the agreement threshold, i.e. only present sentences which a larger and larger percentage of Turkers voted for.  
