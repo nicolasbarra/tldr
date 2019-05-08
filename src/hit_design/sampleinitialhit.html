@@ -1,0 +1,95 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+  <crowd-instructions link-text="View instructions" link-type="button">
+     
+    <short-summary>
+      <p>Welcome to TL;DR! This projects aims to use crowdsourcing to summarize long, verbose texts. 
+      You will help us by selecting the most important sentences from a short block of text. 
+      We have created HITs on Mechanical Turk Sandbox where you select the most important sentences 
+      from a portion of a lengthy article.</p>
+    </short-summary>
+      
+    <detailed-instructions>
+      <!--<h3>detailed instructions</h3>-->
+      We recommend selecting 3-5 sentences, but feel free to select more or fewer if your passage seems 
+      especially relevant or especially insignificant. Just remember that the goal of our project is 
+      to provide a concise summary, so choosing more sentences will not necessarily help us create the 
+      best product. Note that you are not ranking the relative importance of sentences, simply indicating
+      in a binary fashion whether or not each sentence is important.  
+    </detailed-instructions>
+
+    <positive-example>
+        <crowd-checkbox name="100" checked = "true" required disabled></crowd-checkbox><label>4</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <crowd-checkbox name="101" checked = "true" required disabled></crowd-checkbox><label>7</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <crowd-checkbox name="102" checked = "true" required disabled></crowd-checkbox><label>14</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <crowd-checkbox name="103" checked = "true" required disabled></crowd-checkbox><label>19</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <br><p>4 checkboxes are checked, which is a reasonable amount</p>
+    </positive-example>
+
+    <negative-example>
+      <crowd-checkbox name="104" required disabled></crowd-checkbox><label>1</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <crowd-checkbox name="105"required disabled></crowd-checkbox><label>2</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <crowd-checkbox name="106"required disabled></crowd-checkbox><label>3</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <br><p>no checkboxes are checked, but the goal is to summarize the article.</p>
+    </negative-example>
+  </crowd-instructions>
+  
+  <br><label></label>
+  
+  <br><label></label>
+  
+  <body>The Islamic State has finally fizzled<span style="color:Blue;"><b>①</b></span>. Its caliphate, daringly declared from the pulpit of the Great Mosque of al-Nuri, in Iraq, in 2014, had been the size of Britain, ruled eight million people, lured recruits from eighty countries, and threatened to redraw the map of the Middle East<span style="color:Blue;"><b>②</b></span>. It ended, in the Syrian farming hamlet of Baghouz, as little more than a junk yard about the size of Central Park, filled with burnt-out vehicles and dilapidated tents<span style="color:Blue;"><b>③</b></span>. Tens of thousands of ISIS loyalists, both fighters and their families, opted to surrender—and face life in crammed prisons and dreary detention camps—rather than become martyrs in ISIS’s promised paradise<span style="color:Blue;"><b>④</b></span>. The dangers are far from over<span style="color:Blue;"><b>⑤</b></span>. ISIS has sleeper agents<span style="color:Blue;"><b>⑥</b></span>. “There are thousands,” General Mazloum Kobani Abdi, the reclusive politician turned commander who led the campaign against ISIS in Syria, told me, when I travelled through the former caliphate last month<span style="color:Blue;"><b>⑦</b></span>. Abu Bakr al-Baghdadi, the Islamic State’s “caliph” and the world’s most wanted man, has evaded capture<span style="color:Blue;"><b>⑧</b></span>. ISIS also still has affiliates active from Nigeria to Afghanistan, from Egypt to the Philippines<span style="color:Blue;"><b>⑨</b></span>. “Frankly, our job has just started,” Mazloum warned<span style="color:Blue;"><b>⑩</b></span>. “We are finishing the great battle, then we will fight a different kind of war.<span style="color:Blue;"><b>⑪</b></span>. The drive to flush ISIS out of Syrian territory was described as “the most successful unconventional military campaign in history” by the Middle East Institute last month<span style="color:Blue;"><b>⑫</b></span>. More than a dozen American diplomats and military officials involved in Syria told me the same thing<span style="color:Blue;"><b>⑬</b></span>. The campaign was distinct from the counterpart operation in neighboring Iraq, where the United States coördinated with a friendly government, retrained its conventional Army, provided sophisticated weaponry, established a headquarters for a coalition of seventy-four countries, and had legal status granted by parliament<span style="color:Blue;"><b>⑭</b></span>. The campaign in Syria liberated roughly the same amount of territory<span style="color:Blue;"><b>⑮</b></span>. But it relied on an unlikely partnership between élite U.S. Special Forces teams and a scrappy local militia led by Mazloum, a middle-aged Kurdish rebel whose face has been weathered by years of conflict and five stints in Syrian prisons<span style="color:Blue;"><b>⑯</b></span>. They all operated in defiance of the Syrian government and its Russian, Iranian, and Hezbollah allies deployed nearby<span style="color:Blue;"><b>⑰</b></span>. Their mission was shrouded in secrecy<span style="color:Blue;"><b>⑱</b></span>. American troops wore no identifying insignias, ranks, or names on their uniforms<span style="color:Blue;"><b>⑲</b></span>. The Syrian fighters knew only the first names of the Americans, including the commander<span style="color:Blue;"><b>⑳</b></span>. Yet they established an unusual level of trust<span style="color:Blue;"><b>②①</b></span>. The U.S.-led international coalition provided air cover, but it depended on the Syrian Democratic Forces, or S.D.F., to protect their troops on the ground<span style="color:Blue;"><b>②②</b></span>.  </body>
+  <div>
+    <p>Check boxes with numbers that correspond to the sentences you deem most important to understand the passage 
+    <b>*The <span style="color:tomato;"> <u>number</u> </span> corresponding to the sentence is <span style="color:tomato;"> <u>at the end</u> </span> of the sentence*</b></p>
+    <crowd-checkbox name="1"></crowd-checkbox><label>1</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="2"></crowd-checkbox><label>2</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="3"></crowd-checkbox><label>3</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="4"></crowd-checkbox><label>4</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="5"></crowd-checkbox><label>5</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="6"></crowd-checkbox><label>6</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="7"></crowd-checkbox><label>7</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="8"></crowd-checkbox><label>8</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="9"></crowd-checkbox><label>9</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="10"></crowd-checkbox><label>10</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <br><label>&nbsp;</label>
+    <br><crowd-checkbox name="11"></crowd-checkbox><label>11</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="12"></crowd-checkbox><label>12</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="13"></crowd-checkbox><label>13</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="14"></crowd-checkbox><label>14</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="15"></crowd-checkbox><label>15</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="16"></crowd-checkbox><label>16</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="17"></crowd-checkbox><label>17</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="18"></crowd-checkbox><label>18</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="19"></crowd-checkbox><label>19</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <br><label>&nbsp;</label>
+    <br><crowd-checkbox name="20"></crowd-checkbox><label>20</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="21"></crowd-checkbox><label>21</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="22"></crowd-checkbox><label>22</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="23"></crowd-checkbox><label>23</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="24"></crowd-checkbox><label>24</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="25"></crowd-checkbox><label>25</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="26"></crowd-checkbox><label>26</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="27"></crowd-checkbox><label>27</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+    <crowd-checkbox name="28"></crowd-checkbox><label>28</label><label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  </div>
+  <br><label></label>
+  
+  <div>
+    <p>Please provide any feedback regarding the clarity of our instructions, 
+    ease of selecting sentences, appropriate Turker compensation based on 
+    time and effort, or anything else which might help us 
+    gather better data.</p>
+    <crowd-text-area name="feedback" rows="4" placeholder="Plz b nice..." required></crowd-text-area>
+  </div>
+  
+  <br><label></label>
+
+</crowd-form>

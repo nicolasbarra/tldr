@@ -1,0 +1,139 @@
+<!-- The following HIT Design was created from code provided by Chris Callison Burch -->
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+  <p><style type="text/css">
+<!-- 
+span.kept { background-color: #FFFFFF; }
+span.deletion  { background-color: black; }
+
+A:link {text-decoration: none; color: black;}
+A:visited {text-decoration: none; color: black;}
+A:active {text-decoration: none; color: black;}
+A:hover {text-decoration: none; color: black;}
+//-->
+</style></p>
+<table>
+    <tbody>
+        <tr>
+            <td>
+            <h1>Shorten English paragraphs</h1>
+            <p style="font-size:25px;">Click on the least important sentences in the paragraphs to delete them.  Your goal is to try to <strong>summarize the passage by deleting as many sentences as possible without changing the meaning </strong> </p>
+            <td>
+        </tr>
+    </tbody>
+</table>
+<script type="text/Javascript">
+
+var sentences = ["${paragraph_1}", "${paragraph_2}", "${paragraph_3}"]; 
+
+words = [ [], [], [] ];
+words[0] = sentences[0].split("#$");
+words[1] = sentences[1].split("#$");
+words[2] = sentences[2].split("#$");
+
+initialdeletions = "";
+var deletions = [ "", "", ""];
+deletions[0] = initalizeBooleanArray(words[0].length, initialdeletions);
+deletions[1] = initalizeBooleanArray(words[1].length, initialdeletions);
+deletions[2] = initalizeBooleanArray(words[2].length, initialdeletions);
+
+var target_deletions_min = Math.round((words[0].length + words[1].length + words[2].length) / 4); 
+
+var target_deletions_max = Math.round((words[0].length + words[1].length + words[2].length) * 3 / 4); 
+
+var num_deletions = 0;
+
+document.write('<p style="font-size:25px;">Please delete at least <input type="text" style="font-size:25px;" size="2" name="remaining_deletions_min" id="remaining_deletions_min" value ="' + target_deletions_min + '" / disabled> more sentences and no more than  <input type="text" style="font-size:25px;" size="2" name="remaining_deletions_max" id="remaining_deletions_max" value ="' + target_deletions_max + '" / disabled> additional sentences.</p>'); 
+
+for(i = 0; i < sentences.length; i++) {
+        writeSentence(i);
+
+}
+
+
+function initalizeBooleanArray(length, indexOfTruesString) {
+        var array = new Array(length);
+        for (i = 0; i < array.length; i++) {
+                array[i] = false;
+        }
+        return array;
+}
+
+// This method wraps every word in a sentence with a javascript click function.
+function writeSentence(i) {
+        document.write('<p style="font-size:20px;">');
+        for(j = 0; j < words[i].length; j++) {
+                var word = words[i][j];
+                document.write('<span class="kept" id="word_' + i + '_' + j + '">');
+                document.write('<a href="javascript:clickWord(' + i + ', ' + j + ')">');
+                document.write(word);
+                document.write('</a>');
+                document.write('</span> ');
+        }
+        document.write('<input type="hidden" name="deletion_mask_' + (i+1) + '" id="deletion_mask_' + (i+1) + '" />');
+
+        document.write('</p>');
+}
+
+
+function boolArrayToString(array) {
+        var arrayString = "";
+        for(i = 0; i < array.length; i++) {
+                if(array[i]) {
+                        arrayString = arrayString + "1";
+                } else {
+                        arrayString = arrayString + "0";
+                }
+        }
+        return arrayString;
+}
+
+
+function clickWord(i, j) { 
+        deletions[i][j] = (!deletions[i][j]);
+        var word = document.getElementById("word_"+ i + '_' + j);
+        if(deletions[i][j]) {
+                word.className = "deletion";
+                num_deletions++;
+        } else {
+                word.className = "kept";
+                num_deletions--;
+        } 
+        document.getElementById('deletion_mask_' + (i+1)).value = boolArrayToString(deletions[i]);
+        remaining_deletions_min = Math.max(0, parseInt(target_deletions_min) - num_deletions);
+        remaining_deletions_max = Math.max(0, parseInt(target_deletions_max) - num_deletions);
+        document.getElementById('remaining_deletions_min').value = remaining_deletions_min;
+        document.getElementById('remaining_deletions_max').value = remaining_deletions_max;
+}
+
+</script>
+<p><input type="hidden" name="userDisplayLanguage" /> <input type="hidden" name="browserInfo" /> <input type="hidden" name="ipAddress" /> <input type="hidden" name="country" /> <input type="hidden" name="city" /> <input type="hidden" name="region" /></p>
+<script language="Javascript" src="http://gd.geobytes.com/gd?after=-1&variables=GeobytesCountry,GeobytesCity,GeobytesRegion,GeobytesIpAddress">
+</script><script language="Javascript">
+<!--
+function getUserInfo() {
+        var userDisplayLanguage = navigator.language ? navigator.language : navigator.userDisplayLanguage;
+        var browserInfo = navigator.userAgent;
+        var country = sGeobytesCountry;
+        var city = sGeobytesCity;
+        var region = sGeobytesRegion;
+
+        document.mturk_form.userDisplayLanguage.value = userDisplayLanguage;
+        document.mturk_form.browserInfo.value = browserInfo;
+        document.mturk_form.country.value = country;
+        document.mturk_form.city.value = city;
+        document.mturk_form.region.value = region;
+}
+
+getUserInfo();
+
+// -->
+</script>
+</crowd-form>
